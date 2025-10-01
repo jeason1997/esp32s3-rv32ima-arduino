@@ -1,0 +1,12 @@
+# 8MB Flash partition table (total 0x800000 bytes)
+# Name,   Type, SubType, Offset,  Size, Flags
+nvs,      data, nvs,     0x9000,  0x5000,     
+# NVS storage area (20KB)
+otadata,  data, ota,     0xe000,  0x2000,     
+# OTA metadata (8KB)
+app0,     app,  ota_0,   0x10000, 0x3A0000,   
+# Application partition 1 (3.625MB)
+app1,     app,  ota_1,   0x3B0000,0x3A0000,   
+# Application partition 2 (3.625MB, for OTA)
+spiffs,   data, spiffs,  0x750000,0xB0000,    
+# SPIFFS storage (640KB)
