@@ -1,12 +1,18 @@
+# 下面选择自己对应的Flash大小，取消注释
+
+# Name, Type, SubType, Offset, Size, Flags
+nvs, data, nvs, 0x9000, 0x5000,
+
+# 4MB Flash partition table (total 0x400000 bytes)
+# app0, app, factory, 0x10000, 0x3F0000,
+
 # 8MB Flash partition table (total 0x800000 bytes)
-# Name,   Type, SubType, Offset,  Size, Flags
-nvs,      data, nvs,     0x9000,  0x5000,     
-# NVS storage area (20KB)
-otadata,  data, ota,     0xe000,  0x2000,     
-# OTA metadata (8KB)
-app0,     app,  ota_0,   0x10000, 0x3A0000,   
-# Application partition 1 (3.625MB)
-app1,     app,  ota_1,   0x3B0000,0x3A0000,   
-# Application partition 2 (3.625MB, for OTA)
-spiffs,   data, spiffs,  0x750000,0xB0000,    
-# SPIFFS storage (640KB)
+app0, app, factory, 0x10000, 0x7F0000,
+
+# 16MB Flash partition table (total 0x1000000 bytes)
+# app0, app, factory, 0x10000, 0xFF0000,
+
+# 32MB Flash partition table (total 0x2000000 bytes)
+# 注意，ESP32虽然允许最大32MB Flash，但每个程序分区都不能超过16MB
+# app0, app, factory, 0x10000, 0xFF0000,
+# app1, app, test, 0x1000000, 0xFF0000,
